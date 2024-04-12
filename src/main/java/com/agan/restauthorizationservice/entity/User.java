@@ -16,5 +16,5 @@ public class User {
     @Length(min = 6, message = "Password must be at least 6 characters long")
     @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{6,}$",
             message = "Password must include digits, lower and upper case letters")
-    private long password;
+    private String password;
 }
