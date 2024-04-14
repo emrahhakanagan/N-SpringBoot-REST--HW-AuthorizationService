@@ -1,5 +1,6 @@
 package com.agan.restauthorizationservice.repository;
 
+import com.agan.restauthorizationservice.entity.User;
 import com.agan.restauthorizationservice.enums.Authorities;
 import org.springframework.stereotype.Repository;
 
@@ -17,8 +18,8 @@ public class UserRepository {
         allUsers.put("emrahhakan", "emrahhakan123");
     }
 
-    public List<Authorities> getUserAuthorities(String user, String password) {
-        if (allUsers.containsKey(user) && allUsers.get(user).equals(password)) {
+    public List<Authorities> getUserAuthorities(User user) {
+        if (allUsers.containsKey(user.getUsername()) && allUsers.get(user.getUsername()).equals(user.getPassword())) {
             return Arrays.asList(Authorities.READ, Authorities.WRITE, Authorities.DELETE);
         } else {
             return Collections.emptyList();
