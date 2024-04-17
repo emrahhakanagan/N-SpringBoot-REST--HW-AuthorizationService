@@ -34,3 +34,7 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
+bootJar {
+    archiveFileName = 'REST-AuthorizationService-0.0.1-SNAPSHOT-plain.jar'
+}
